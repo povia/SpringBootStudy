@@ -50,7 +50,7 @@ public class DatabaseConfiguration {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 	/*
-	 * application.properties¿¡ ¼±¾ğÇÑ mybatis ¼³Á¤µéÀ» ºÒ·¯¿Í¼­ ConfigurationÇÏ´Â Method
+	 * application.propertiesì— ì„ ì–¸í•œ mybatis ì„¤ì •ë“¤ì„ ë¶ˆëŸ¬ì™€ì„œ Configurationí•˜ëŠ” Method
 	 * Return Type : org.apache.ibatis.session.Configuration
 	*/
 	@Bean

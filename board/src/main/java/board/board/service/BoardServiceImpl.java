@@ -9,8 +9,8 @@ import board.board.mapper.BoardMapper;
 import lombok.RequiredArgsConstructor;
 
 /*
- * BoardService¸¦ ±¸ÇöÇÏ´Â ±¸ÇöÃ¼
- * »ç¿ë Mapper BoardMapper´Â ÀÇÁ¸¼º ÁÖÀÔÀÌ ¾Æ´Ñ »ı¼ºÀÚ ÁÖÀÔ ±â¹İÀ¸·Î ¼öÁ¤ÇÔ
+ * BoardServiceë¥¼ êµ¬í˜„í•˜ëŠ” êµ¬í˜„ì²´
+ * ì‚¬ìš© Mapper BoardMapperëŠ” ì˜ì¡´ì„± ì£¼ì…ì´ ì•„ë‹Œ ìƒì„±ì ì£¼ì… ê¸°ë°˜ìœ¼ë¡œ ìˆ˜ì •í•¨
  */
 @Service
 @RequiredArgsConstructor

@@ -3,7 +3,7 @@ package board;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
  
-// ½ºÇÁ¸µ ºÎÆ®ÀÇ ÇÙ½É Annotation
+// ìŠ¤í”„ë§ ë¶€íŠ¸ì˜ í•µì‹¬ Annotation
 @SpringBootApplication
 public class BoardApplication {
 
