@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://thymeleaf.org">
+<head>
+	<title>board</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}"></link>
+</head>
+<body>
+	<div class="container">
+		<h2>List</h2>
+		<table class="board_list">
+			<colgroup>
+				<col width="15%"/>
+				<col width="*"/>
+				<col width="15%"/>
+				<col width="20%"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">No.</th>
+					<th scope="col">Name</th>
+					<th scope="col">Count</th>
+					<th scope="col">Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${#lists.size(list)} > 0" th:each="list : ${list}">
+					<td th:text="${list.boardIdx}"></td>
+					<td class="title" th:text="${list.title}"></td>
+					<td th:text="${list.hitCnt}"></td>
+					<td th:text="${list.createdDt}"></td>
+				</tr>
+				<tr th:unless="$lists.size(list)} >0">
+					<td colspan="4">No list yet</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="/board/openBoardWrite.do" class="btn">Write</a>
+	</div>
+</body>
+</html>
