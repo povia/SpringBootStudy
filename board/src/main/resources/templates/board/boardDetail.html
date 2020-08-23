@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detail view</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<div class="container">
+		<h2>detail view</h2>
+		<form id="frm" method="post">
+			<table class="board_detail">
+				<colgroup>
+					<col width="15%" />
+					<col width="35%" />
+					<col width="15%" />
+					<col width="35%" />
+				</colgroup>
+				<caption>detail view</caption>
+				<tbody>
+					<tr>
+						<th scope="row">No.</th>
+						<td th:text="${board.boardIdx }"></td>
+						<th scope="row">Count</th>
+						<td th:text="${board.hitCnt }"></td>
+					</tr>
+					<tr>
+						<th scope="row">Creator</th>
+						<td th:text="${board.creatorId }"></td>
+						<th scope="row">Created Date</th>
+						<td th:text="${board.createdDt }"></td>
+					</tr>
+					<tr>
+						<th scope="row">Subject</th>
+						<td colspan="3"><input type="text" id="title" name="title"
+							th:value="${board.title }" /></td>
+					</tr>
+					<tr>
+						<td colspan="4" class="view_text"><textarea title="detail"
+								id="contentsDtl" name="contentsDtl"
+								th:text="${board.contentsDtl }"></textarea></td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="hidden" name="boardIdx" th:value="${board.boardIdx}">
+
+			<input type="button" id="list" value="Back to List"> <input
+				type="button" id="edit" value="Edit"> <input type="button"
+				id="delete" value="Delete">
+
+			<script
+				src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$("#list").on("click", function() {
+						location.href = "/board/openBoardList.do";
+					});
+
+					$("#edit").on("click", function() {
+						var frm = $("#frm")[0];
+						frm.action = "/board/updateBoard.do";
+						frm.submit();
+					});
+
+					$("#delete").on("click", function() {
+						var frm = $("#frm")[0];
+						frm.action = "/board/deleteBoard.do";
+						frm.submit();
+					});
+				});
+			</script>
+		</form>
+	</div>
+</body>
+</html>
