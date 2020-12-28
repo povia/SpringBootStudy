@@ -14,7 +14,7 @@ public class LoggerAspect {
 
 	@Around("execution(* board..controller.*Controller.*(..)) or "
 			+ "execution(* board..service.*Impl.*(..)) or "
-			+ "execution(* board..dao.*Mapper.*(..))")
+			+ "execution(* board..mapper.*Mapper.*(..))")
 	public Object logPrint(ProceedingJoinPoint joinPoint) throws Throwable {
 		String type = "";
 		String name = joinPoint.getSignature().getDeclaringTypeName();
