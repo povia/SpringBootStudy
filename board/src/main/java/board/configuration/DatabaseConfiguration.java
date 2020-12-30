@@ -10,6 +10,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -18,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 
 @Configuration
 @RequiredArgsConstructor
+@EnableTransactionManagement
 @PropertySource("classpath:/application.properties")
 public class DatabaseConfiguration {
 	
@@ -36,6 +40,10 @@ public class DatabaseConfiguration {
 		return dataSource;
 	}
 	
+	@Bean
+	public PlatformTransactionManager transactionManager() throws Exception{
+		return new DataSourceTransactionManager(dataSource());
+	}
 	
 	@Bean
 	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
